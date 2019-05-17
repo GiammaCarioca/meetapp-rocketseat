@@ -3,12 +3,16 @@
 	padding: 0;
 }
 
-.Signin-container {
+.signin-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #27202c;
 	height: 100vh;
+}
+
+h1 {
+	text-align: center;
 }
 
 form {

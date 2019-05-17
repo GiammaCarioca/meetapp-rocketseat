@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar.js';
 import './Profile.css';
-import Preferences from './Preferences';
+import Fieldset from './Fieldset';
 
 class Profile extends Component {
 	state = {
@@ -33,7 +33,7 @@ class Profile extends Component {
 							placeholder="Sua senha secreta"
 						/>
 					</form>
-					<Preferences />
+					<Fieldset />
 					<button className="button-primary">Salvar</button>
 				</div>
 			</div>

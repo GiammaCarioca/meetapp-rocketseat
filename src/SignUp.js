@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './SignUp.css';
-import logo from './logo.svg';
+import logo from './logo-red.svg';
 
 export default class SignUp extends Component {
 	constructor(props) {
@@ -30,10 +30,10 @@ export default class SignUp extends Component {
 	}
 	render() {
 		return (
-			<div className="Signup-container">
+			<div className="signup-container">
 				<form onSubmit={this.handleSubmit}>
 					<h1>
-						<img src={logo} alt="MeetApp" />
+						<img className="logo-red" src={logo} alt="MeetApp" />
 					</h1>
 					<label htmlFor="name">Nome</label>
 					<input

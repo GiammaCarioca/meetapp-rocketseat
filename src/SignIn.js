@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './SignIn.css';
-import logo from './logo.svg';
+import logo from './logo-red.svg';
 
 class SignIn extends Component {
 	constructor(props) {
@@ -27,7 +27,7 @@ class SignIn extends Component {
 	}
 	render() {
 		return (
-			<div className="Signin-container">
+			<div className="signin-container">
 				<form onSubmit={this.handleSubmit}>
 					<h1>
 						<img src={logo} alt="MeetApp" />

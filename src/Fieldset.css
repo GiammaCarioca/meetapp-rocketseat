@@ -1,0 +1,86 @@
+fieldset {
+	margin: 30px 0 0 0;
+	border: 0;
+}
+
+legend {
+	margin-bottom: 20px;
+	font-family: Helvetica-Bold;
+	font-size: 16px;
+	color: #ffffff;
+	text-align: left;
+}
+
+label {
+	font-family: Helvetica;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: left;
+}
+
+input {
+	margin-top: 10px;
+	opacity: 0.5;
+	font-family: Helvetica;
+	font-size: 20px;
+	color: #ffffff;
+	text-align: left;
+}
+.checkbox {
+	display: flex;
+}
+
+.checkbox input[type='checkbox'] {
+	opacity: 0;
+}
+
+.checkbox label {
+	position: relative;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+.checkbox label::before {
+	content: '';
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+	border-radius: 5px;
+	background-color: #524c56;
+}
+
+.checkbox label::after {
+	content: '';
+	display: inline-block;
+	height: 18px;
+	width: 18px;
+	border-radius: 5px;
+	background-color: #e5556e;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+	position: absolute;
+	margin-left: 10px;
+}
+
+.checkbox label::before {
+	left: -28px;
+}
+.checkbox label::after {
+	left: -28px;
+}
+
+/*unchecked*/
+.checkbox input[type='checkbox'] + label::after {
+	content: none;
+}
+/*checked*/
+.checkbox input[type='checkbox']:checked + label::after {
+	content: '';
+}
+
+/*adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type='checkbox']:focus + label::before {
+	outline: rgb(59, 153, 252) auto 5px;
+}
