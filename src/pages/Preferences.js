@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Preferences.css';
-import Fieldset from './Fieldset';
+import Fieldset from '../components/Fieldset';
 
 class Preferences extends Component {
 	constructor(props) {

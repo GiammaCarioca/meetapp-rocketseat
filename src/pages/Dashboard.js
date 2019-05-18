@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
 import './Dashboard.css';
-import Card from './Card';
+import Navbar from '../components/Navbar';
+import Card from '../components/Card';
 
 class Dashboard extends Component {
 	render() {

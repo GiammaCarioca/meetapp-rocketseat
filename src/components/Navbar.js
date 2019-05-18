@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
-import logo from './logo.svg';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/logo.svg';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -12,14 +13,14 @@ class Navbar extends Component {
 							<h1>
 								<img src={logo} alt="MeetApp" />
 							</h1>
-							<a href="#">Início</a>
-							<a href="#">Buscar</a>
-							<a href="#">Novo meetup</a>
+							<NavLink to="/">Início</NavLink>
+							<NavLink to="/">Buscar</NavLink>
+							<NavLink to="/">Novo meetup</NavLink>
 						</div>
 						<div>
-							<a href="#">
+							<NavLink to="/profile">
 								<i className="material-icons">person_outline</i>
-							</a>
+							</NavLink>
 						</div>
 					</nav>
 				</Fragment>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar.js';
+import Navbar from '../components/Navbar.js';
+import Fieldset from '../components/Fieldset';
 import './Profile.css';
-import Fieldset from './Fieldset';
 
 class Profile extends Component {
 	state = {

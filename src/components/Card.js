@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Card.css';
-import foto from './meetup.jpg';
+import foto from '../assets/images/meetup.jpg';
 
 export default class Card extends Component {
 	render() {

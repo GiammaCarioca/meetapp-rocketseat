@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './SignUp.css';
-import logo from './logo-red.svg';
+import logo from '../assets/images/logo-red.svg';
 
 export default class SignUp extends Component {
 	constructor(props) {

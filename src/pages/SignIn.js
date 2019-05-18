@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './SignIn.css';
-import logo from './logo-red.svg';
+import logo from '../assets/images/logo-red.svg';
 
 class SignIn extends Component {
 	constructor(props) {
