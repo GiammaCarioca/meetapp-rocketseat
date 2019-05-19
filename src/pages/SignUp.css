@@ -1,14 +1,9 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
 .signup-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #27202c;
 	height: 100vh;
+	background-color: #27202c;
 }
 
 h1 {
@@ -42,7 +37,7 @@ input {
 	text-align: left;
 }
 
-.button-primary {
+/* .button-primary {
 	margin-top: 30px;
 	background-color: #e5556e;
 	width: 318px;
@@ -53,7 +48,7 @@ input {
 	font-size: 16px;
 	color: #ffffff;
 	text-align: center;
-}
+} */
 
 .button-secondary {
 	background-color: transparent;
