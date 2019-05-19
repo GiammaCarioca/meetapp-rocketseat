@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './SignIn.css';
-import logo from '../assets/images/logo-red.svg';
+import logo from '../../assets/images/logo-red.svg';
+import Button from '../../components/Button';
 
-class SignIn extends Component {
+import { Container, Logo, Form } from './styles';
+
+export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       email: '',
       password: '',
     };
@@ -15,6 +18,7 @@ class SignIn extends Component {
 
   handleInputChange(e) {
     this.setState({
+      [e.target.name]: e.target.value,
       [e.target.email]: e.target.value,
       [e.target.password]: e.target.value,
     });
@@ -23,24 +27,35 @@ class SignIn extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.setState({
+      name: '',
       email: '',
       password: '',
     });
   }
 
   render() {
+    const { name, email, password } = this.state;
     return (
-      <div className="signin-container">
-        <form onSubmit={this.handleSubmit}>
-          <h1>
-            <img src={logo} alt="MeetApp" />
-          </h1>
+      <Container>
+        <Logo>
+          <img className="logo-red" src={logo} alt="MeetApp" />
+        </Logo>
+        <Form onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Nome</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={this.handleInputChange}
+            placeholder="Digite seu nome"
+          />
           <label htmlFor="email">E-mail</label>
           <input
             type="text"
             id="email"
             name="email"
-            value={this.state.email}
+            value={email}
             onChange={this.handleInputChange}
             placeholder="Digite seu e-mail"
           />
@@ -50,16 +65,16 @@ class SignIn extends Component {
             type="text"
             id="password"
             name="password"
-            value={this.state.password}
+            value={password}
             onChange={this.handleInputChange}
             placeholder="Sua senha secreta"
           />
-          <button className="button-primary">Entrar</button>
-          <button className="button-secondary">Criar conta grátis</button>
-        </form>
-      </div>
+          <Button type="submit">Criar conta</Button>
+          <Button secondary type="submit">
+						Já tenho conta
+          </Button>
+        </Form>
+      </Container>
     );
   }
 }
-
-export default SignIn;

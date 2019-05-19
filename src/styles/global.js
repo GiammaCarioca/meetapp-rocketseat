@@ -8,10 +8,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: #27202c;
   }
 `;
 
