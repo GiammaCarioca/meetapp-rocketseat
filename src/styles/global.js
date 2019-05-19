@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: red;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
   }
