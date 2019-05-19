@@ -15,7 +15,7 @@ class Navbar extends Component {
 							</h1>
 							<NavLink to="/">Início</NavLink>
 							<NavLink to="/">Buscar</NavLink>
-							<NavLink to="/">Novo meetup</NavLink>
+							<NavLink to="/newmeetup">Novo meetup</NavLink>
 						</div>
 						<div>
 							<NavLink to="/profile">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Dashboard.css';
 import Navbar from '../components/Navbar';
+import SearchBar from '../components/SearchBar';
 import Card from '../components/Card';
 
 class Dashboard extends Component {
@@ -9,6 +10,7 @@ class Dashboard extends Component {
 			<div>
 				<Navbar />
 				<div className="Dashboard-section">
+					<SearchBar />
 					<div className="wrapper-section">
 						<h3>Inscrições</h3>
 						<div className="group-card">

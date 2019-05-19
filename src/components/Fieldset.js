@@ -6,7 +6,7 @@ export default class Preferences extends Component {
 		return (
 			<div>
 				<fieldset>
-					<legend className="form-label">Preferências</legend>
+					<legend className="form-label">{this.props.legend}</legend>
 					<div className="checkbox">
 						<input
 							onChange={this.handleChange}

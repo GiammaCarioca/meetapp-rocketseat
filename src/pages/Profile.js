@@ -33,7 +33,7 @@ class Profile extends Component {
 							placeholder="Sua senha secreta"
 						/>
 					</form>
-					<Fieldset />
+					<Fieldset legend="Preferências" />
 					<button className="button-primary">Salvar</button>
 				</div>
 			</div>

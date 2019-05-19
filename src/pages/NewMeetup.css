@@ -1,0 +1,12 @@
+.wrapper-image {
+	width: 352px;
+	height: 96px;
+}
+
+.camera {
+	opacity: 0.5;
+	font-family: material;
+	font-size: 24px;
+	color: #ffffff;
+	text-align: left;
+}

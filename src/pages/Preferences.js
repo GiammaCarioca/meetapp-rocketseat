@@ -32,7 +32,7 @@ class Preferences extends Component {
 						selecionarmos os melhores meetups pra você:
 					</p>
 					<form action="">
-						<Fieldset />
+						<Fieldset legend="Preferências" />
 					</form>
 					<button className="button-primary">Continuar</button>
 				</div>
