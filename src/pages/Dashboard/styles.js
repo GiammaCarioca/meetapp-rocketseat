@@ -5,19 +5,26 @@ export const Main = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 45px;
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
 
-	.group-card {
+	.wrapper-section {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		max-width: 910px;
+		width: 100%;
 		margin-bottom: 30px;
-	}
 
-	h3 {
-		font-family: Helvetica-Bold;
-		font-size: 16px;
-		color: #ffffff;
-		text-align: left;
-		margin-bottom: 20px;
+		h3 {
+			margin-bottom: 20px;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		.group-cards {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 `;

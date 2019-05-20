@@ -1,29 +1,31 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Fieldset from '../../components/Fieldset';
+import Button from '../../components/Button';
 
-import { Container } from './styles';
+import { Container, Form } from './styles';
 
 export default function NewMeetup() {
   return (
     <div>
       <Navbar />
       <Container>
-        <form>
-          <label htmlFor="title">Título</label>
-          <input type="text" id="title" name="title" placeholder="Digite o título do meetup" />
-          <label htmlFor="description">Descrição</label>
-          <input type="text" id="description" name="description" placeholder="Descreva seu meetup" />
-          <label htmlFor="image">Imagem</label>
-          <input type="text" id="image" name="image" />
-          <div className="wrapper-image">
-            <i className="material-icons">camera_alt</i>
-          </div>
-          <label htmlFor="location">Localização</label>
-          <input type="text" id="location" name="location" placeholder="Onde seu meetup irá acontecer?" />
+        <div>
+          <Form>
+            <label htmlFor="title">Título</label>
+            <input type="text" id="title" name="title" placeholder="Digite o título do meetup" />
+            <label htmlFor="description">Descrição</label>
+            <input type="text" id="description" name="description" placeholder="Descreva seu meetup" />
+            <label htmlFor="image">Imagem</label>
+            <div className="upload-image">
+              <input type="text" id="image" name="image" placeholder="Carregue uma imagem" />
+            </div>
+            <label htmlFor="location">Localização</label>
+            <input type="text" id="location" name="location" placeholder="Onde seu meetup irá acontecer?" />
+          </Form>
           <Fieldset legend="Tema do meetup" />
-          <button className="button-primary">Salvar</button>
-        </form>
+          <Button>Salvar</Button>
+        </div>
       </Container>
     </div>
   );

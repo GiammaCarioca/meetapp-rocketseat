@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import foto from '../../assets/images/meetup.jpg';
 
 import { Card } from './styles';
@@ -9,14 +9,14 @@ export default function createCard() {
     <NavLink to="/meetup">
       <Card>
         <img src={foto} alt="meetup" />
-        <div className="card-text">
-          <div>
+        <div className="wrapper">
+          <div className="card-text">
             <h2>Meetup React Native</h2>
             <small>120 membros</small>
           </div>
-          <Link to="/meetup">
+          <div className="wrapper-icon">
             <i className="material-icons">keyboard_arrow_right</i>
-          </Link>
+          </div>
         </div>
       </Card>
     </NavLink>
