@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import Navbar from '../../components/Navbar';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
@@ -45,4 +46,8 @@ class Profile extends Component {
 	}
 }
 
-export default Profile;
+const mapStatetoProps = state => ({
+  users: state.users,
+});
+
+export default connect(mapStatetoProps)(Profile);

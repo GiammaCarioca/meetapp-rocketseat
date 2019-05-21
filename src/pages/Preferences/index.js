@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../../assets/images/logo-red.svg';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
-
 import { Container, Logo } from './styles';
 
 class Preferences extends Component {

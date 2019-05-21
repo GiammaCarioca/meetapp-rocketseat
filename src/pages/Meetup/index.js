@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import foto from '../../assets/images/meetup-2.png';
 
 import { Container } from './styles';
 
-export default function Meetup() {
+function Meetup({ meetups }) {
   return (
     <div>
       <Navbar />
       <Container>
-        <img src={foto} alt="react native meetup" />
-        <article>
-          <h3>Meetup React Native</h3>
-          <small>120 membros</small>
-          <p className="description">
-						O meetup de React Native é um espaço para discutir sobre tecnologias por volta do
-						desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis
-						multiplataforma com Javascript.
-          </p>
-          <div className="details">
-            <small>Realizado em:</small>
-            <address>Rua Guilherme Gembala, 260, Rio do Sul - SC</address>
-          </div>
-        </article>
+        {meetups.filter(meetup => meetup.id === 3).map(meetup => (
+          <Fragment>
+            <img src={foto} alt={meetup.title} />
+            <article>
+              <h3>{meetup.title}</h3>
+              <small>{meetup.members} membros</small>
+              <p className="description">{meetup.description}</p>
+              <div className="details">
+                <small>Realizado em:</small>
+                <address>{meetup.location}</address>
+              </div>
+            </article>
+          </Fragment>
+        ))}
+
         <Button>Inscreva-se</Button>
       </Container>
     </div>
   );
 }
+
+const mapStatetoProps = state => ({
+  meetups: state.meetups,
+});
+
+export default connect(mapStatetoProps)(Meetup);
