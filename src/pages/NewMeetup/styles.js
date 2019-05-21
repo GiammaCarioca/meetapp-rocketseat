@@ -24,7 +24,7 @@ export const Form = styled.form`
 		color: #ffffff;
 	}
 
-	input {
+	input[type='text'] {
 		width: 320px;
 		background: transparent;
 		border-style: none;
