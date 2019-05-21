@@ -6,8 +6,6 @@ import store from './store';
 import Routes from './routes';
 import GlobalSyle from './styles/global';
 
-console.tron.log('Testando Reactotron');
-
 const App = () => (
   <Provider store={store}>
     <GlobalSyle />

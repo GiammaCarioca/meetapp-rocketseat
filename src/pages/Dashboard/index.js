@@ -5,25 +5,25 @@ import Card from '../../components/Card';
 
 import { Main } from './styles';
 
-export default function Dashboard() {
-  return (
-    <div>
-      <Navbar />
-      <Main>
-        <SearchBar />
-        <section>
-          <h3>Inscrições</h3>
-          <Card />
-        </section>
-        <section>
-          <h3>Próximos meetups</h3>
-          <Card />
-        </section>
-        <section>
-          <h3>Recomendados</h3>
-          <Card />
-        </section>
-      </Main>
-    </div>
-  );
-}
+const Dashboard = () => (
+  <div>
+    <Navbar />
+    <Main>
+      <SearchBar />
+      <section>
+        <h3>Inscrições</h3>
+        <Card />
+      </section>
+      <section>
+        <h3>Próximos meetups</h3>
+        <Card />
+      </section>
+      <section>
+        <h3>Recomendados</h3>
+        <Card />
+      </section>
+    </Main>
+  </div>
+);
+
+export default Dashboard;

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import logo from '../../assets/images/logo-red.svg';
 import Button from '../../components/Button';
 
-import { Container, Logo, Form } from './styles';
+import {
+  Container, Logo, Form, StyledLink,
+} from './styles';
 
-class Login extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,7 +33,7 @@ class Login extends Component {
   }
 
   render() {
-    const { email, password, handleInputChange } = this.state;
+    const { email, password } = this.state;
     return (
       <Container>
         <Logo>
@@ -40,7 +42,7 @@ class Login extends Component {
         <Form onSubmit={this.handleSubmit}>
           <label htmlFor="email">E-mail</label>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             value={email}
@@ -50,21 +52,17 @@ class Login extends Component {
 
           <label htmlFor="password">Senha</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             value={password}
-            onChange={handleInputChange}
+            onChange={this.handleInputChange}
             placeholder="Sua senha secreta"
           />
           <Button type="submit">Entrar</Button>
-          <Button secondary type="submit">
-						Criar conta grátis
-          </Button>
+          <StyledLink to="/signup">Criar conta grátis</StyledLink>
         </Form>
       </Container>
     );
   }
 }
-
-export default Login;

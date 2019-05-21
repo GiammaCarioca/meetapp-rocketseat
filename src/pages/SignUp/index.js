@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from '../../assets/images/logo-red.svg';
 import Button from '../../components/Button';
 
-import { Container, Logo, Form } from './styles';
+import {
+  Container, Logo, Form, StyledLink,
+} from './styles';
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -52,7 +54,7 @@ export default class SignUp extends Component {
           />
           <label htmlFor="email">E-mail</label>
           <input
-            type="text"
+            type="email"
             id="email"
             name="email"
             value={email}
@@ -62,7 +64,7 @@ export default class SignUp extends Component {
 
           <label htmlFor="password">Senha</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             value={password}
@@ -70,9 +72,7 @@ export default class SignUp extends Component {
             placeholder="Sua senha secreta"
           />
           <Button type="submit">Criar conta</Button>
-          <Button secondary type="submit">
-						Já tenho conta
-          </Button>
+          <StyledLink to="/login">Já tenho conta</StyledLink>
         </Form>
       </Container>
     );

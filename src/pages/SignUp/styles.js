@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -43,5 +44,26 @@ export const Form = styled.form`
 		:focus {
 			outline: 5px auto #e5556e;
 		}
+	}
+`;
+
+export const StyledLink = styled(Link)`
+	color: #ffffff;
+	opacity: 0.6;
+	text-decoration: none;
+	width: 320px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5px;
+
+	&:focus {
+		outline: 5px auto #e5556e;
+	}
+
+	&:hover {
+		background-color: transparent;
+		color: #e5556e;
 	}
 `;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
-import SignUp from '../pages/SignUp';
-import Login from '../pages/Login';
-import Preferences from '../pages/Preferences';
-import Meetup from '../pages/Meetup';
-import NewMeetup from '../pages/NewMeetup';
-import Profile from '../pages/Profile';
+import Dashboard from '../pages/dashboard';
+import SignUp from '../pages/signUp';
+import Login from '../pages/login';
+import Preferences from '../pages/preferences';
+import Meetup from '../pages/meetup';
+import NewMeetup from '../pages/newMeetup';
+import Profile from '../pages/profile';
 
 export default function Routes() {
   return (

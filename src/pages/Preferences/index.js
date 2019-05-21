@@ -4,7 +4,7 @@ import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
 import { Container, Logo } from './styles';
 
-class Preferences extends Component {
+export default class Preferences extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,5 +46,3 @@ class Preferences extends Component {
     );
   }
 }
-
-export default Preferences;
