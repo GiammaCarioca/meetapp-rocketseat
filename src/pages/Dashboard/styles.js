@@ -9,22 +9,17 @@ export const Main = styled.div`
 	margin-left: 20px;
 	margin-right: 20px;
 
-	.wrapper-section {
+	section {
 		display: flex;
 		flex-direction: column;
-		max-width: 910px;
 		width: 100%;
+		max-width: 910px;
 		margin-bottom: 30px;
+	}
 
-		h3 {
-			margin-bottom: 20px;
-			font-weight: bold;
-			color: #ffffff;
-		}
-
-		.group-cards {
-			display: flex;
-			justify-content: space-between;
-		}
+	h3 {
+		margin-bottom: 20px;
+		font-weight: bold;
+		color: #ffffff;
 	}
 `;

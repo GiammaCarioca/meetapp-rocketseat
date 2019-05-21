@@ -5,17 +5,22 @@ export const Card = styled.div`
 	flex-direction: column;
 	max-width: 280px;
 	border-radius: 5px;
-	background-color: #ffffff;
 	margin-right: 20px;
+	background-color: #ffffff;
+
+	&:last-child {
+		margin-right: 0;
+	}
 
 	img {
 		width: 100%;
 		height: 110px;
 		border-top-left-radius: 5px;
 		border-top-right-radius: 5px;
+		background-color: green;
 	}
 
-	div.wrapper {
+	div.wrapper-content {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

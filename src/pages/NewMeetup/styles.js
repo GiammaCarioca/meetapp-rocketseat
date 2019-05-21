@@ -7,7 +7,7 @@ export const Container = styled.div`
 	align-items: center;
 	width: 100%;
 	max-width: 910px;
-	margin: auto;
+	margin: 0 auto 40px auto;
 `;
 
 export const Form = styled.form`

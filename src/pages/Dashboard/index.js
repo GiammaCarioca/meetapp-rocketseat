@@ -11,29 +11,17 @@ export default function Dashboard() {
       <Navbar />
       <Main>
         <SearchBar />
-        <section className="wrapper-section">
+        <section>
           <h3>Inscrições</h3>
-          <div className="group-cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Card />
         </section>
-        <section className="wrapper-section">
+        <section>
           <h3>Próximos meetups</h3>
-          <div className="group-cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Card />
         </section>
-        <section className="wrapper-section">
+        <section>
           <h3>Recomendados</h3>
-          <div className="group-cards">
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <Card />
         </section>
       </Main>
     </div>
