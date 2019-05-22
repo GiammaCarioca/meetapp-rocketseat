@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Fieldset = styled.fieldset`
+export const Container = styled.fieldset`
 	margin-top: 30px;
 	padding-left: 10px;
 	border: none;

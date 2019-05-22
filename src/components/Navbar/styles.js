@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav`
+export const Container = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	background-color: #e5556e;

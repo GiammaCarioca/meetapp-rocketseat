@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Button = styled.button`
+export const Container = styled.button`
 	width: 320px;
 	height: 50px;
 	border-style: none;

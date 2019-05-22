@@ -1,6 +1,14 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Card = styled.div`
+export const StyledLink = styled(Link)`text-decoration: none;`;
+
+export const Container = styled.div`
+	display: flex;
+	justify-content: space-between;
+`;
+
+export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 280px;

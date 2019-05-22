@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../assets/images/logo-red.svg';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
-import { Container, Logo } from './styles';
+import { Container, Logo, Wrapper } from './styles';
 
 export default class Preferences extends Component {
   constructor(props) {
@@ -37,9 +37,9 @@ export default class Preferences extends Component {
         <Logo>
           <img className="logo-red" src={logo} alt="MeetApp" />
         </Logo>
-        <div className="preferences-content">
-          <p className="welcome-user">Olá, Giamma</p>
-          <p className="welcome-text">
+        <Wrapper>
+          <h2 className="welcome-user">Olá, Giamma</h2>
+          <p>
 						Parece que é seu primeiro acesso por aqui, comece escolhendo algumas preferências para
 						selecionarmos os melhores meetups pra você:
           </p>
@@ -47,7 +47,7 @@ export default class Preferences extends Component {
             <Fieldset legend="Preferências" />
             <Button type="submit">Continuar</Button>
           </form>
-        </div>
+        </Wrapper>
       </Container>
     );
   }

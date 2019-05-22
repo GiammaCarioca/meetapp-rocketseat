@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Navbar from '../../components/Navbar';
 import SearchBar from '../../components/SearchBar';
 import Card from '../../components/Card';
@@ -6,7 +6,7 @@ import Card from '../../components/Card';
 import { Main } from './styles';
 
 const Dashboard = () => (
-  <div>
+  <Fragment>
     <Navbar />
     <Main>
       <SearchBar />
@@ -23,7 +23,7 @@ const Dashboard = () => (
         <Card />
       </section>
     </Main>
-  </div>
+  </Fragment>
 );
 
 export default Dashboard;

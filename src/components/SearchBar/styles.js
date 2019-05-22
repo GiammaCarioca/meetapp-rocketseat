@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Search = styled.div`
+export const Container = styled.div`
 	display: flex;
 	width: 100%;
 	max-width: 910px;

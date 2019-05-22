@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Article = styled.article`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -12,14 +12,6 @@ export const Container = styled.div`
 	img {
 		width: 100%;
 		height: 360px;
-	}
-
-	article {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		max-width: 315px;
-		margin: 30px auto 0 auto;
 	}
 
 	h3 {
@@ -47,4 +39,12 @@ export const Container = styled.div`
 		color: #ffffff;
 		line-height: 24px;
 	}
+`;
+
+export const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 315px;
+	margin: 30px auto 0 auto;
 `;

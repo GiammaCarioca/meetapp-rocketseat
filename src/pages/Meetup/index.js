@@ -4,30 +4,27 @@ import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import foto from '../../assets/images/meetup-2.png';
 
-import { Container } from './styles';
+import { Article, Wrapper } from './styles';
 
 const Meetup = ({ meetups }) => (
-  <div>
+  <Fragment>
     <Navbar />
-    <Container>
-      {meetups.filter(meetup => meetup.id === 3).map(meetup => (
-        <Fragment>
-          <img src={foto} alt={meetup.title} />
-          <article>
-            <h3>{meetup.title}</h3>
-            <small>{meetup.members} membros</small>
-            <p className="description">{meetup.description}</p>
-            <div className="details">
-              <small>Realizado em:</small>
-              <address>{meetup.location}</address>
-            </div>
-          </article>
-        </Fragment>
-      ))}
-
-      <Button>Inscreva-se</Button>
-    </Container>
-  </div>
+    {meetups.filter(meetup => meetup.id === 3).map(meetup => (
+      <Article>
+        <img src={foto} alt={meetup.title} />
+        <Wrapper>
+          <h3>{meetup.title}</h3>
+          <small>{meetup.members} membros</small>
+          <p className="description">{meetup.description}</p>
+          <div className="details">
+            <small>Realizado em:</small>
+            <address>{meetup.location}</address>
+          </div>
+        </Wrapper>
+        <Button>Inscreva-se</Button>
+      </Article>
+    ))}
+  </Fragment>
 );
 
 const mapStatetoProps = state => ({

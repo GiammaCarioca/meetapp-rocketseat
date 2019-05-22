@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Button } from './styles';
+import { Container } from './styles';
 
-export default function createButton({ secondary, children }) {
-  return (
-    <Button secondary={secondary} type="submit">
-      {children}
-    </Button>
-  );
-}
+const Button = ({ secondary, children }) => (
+  <Container secondary={secondary} type="submit">
+    {children}
+  </Container>
+);
+
+export default Button;

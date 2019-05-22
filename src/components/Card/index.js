@@ -1,23 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import foto from '../../assets/images/meetup.jpg';
 
-import { Card } from './styles';
+import { Container, Wrapper, StyledLink } from './styles';
 
-function createCard({ meetups }) {
-  return (
-    <Link
-      to="/meetup"
-      style={{
-			  textDecoration: 'none',
-			  display: 'flex',
-			  justifyContent: 'space-between',
-      }}
-    >
-      {meetups.map(meetup => (
-        <Card key={meetup.id}>
-          <img src={foto} alt="meetup" />
+const Card = ({ meetups }) => (
+  <Container>
+    {meetups.map(meetup => (
+      <Wrapper key={meetup.id}>
+        <StyledLink to="/meetup">
+          <img src={foto} alt={meetup.title} />
           <div className="wrapper-content">
             <div className="card-text">
               <h2>{meetup.title}</h2>
@@ -27,14 +19,14 @@ function createCard({ meetups }) {
               <i className="material-icons">keyboard_arrow_right</i>
             </div>
           </div>
-        </Card>
-      ))}
-    </Link>
-  );
-}
+        </StyledLink>
+      </Wrapper>
+    ))}
+  </Container>
+);
 
 const mapStatetoProps = state => ({
   meetups: state.meetups,
 });
 
-export default connect(mapStatetoProps)(createCard);
+export default connect(mapStatetoProps)(Card);
