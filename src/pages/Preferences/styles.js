@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 	max-width: 315px;
 	padding-top: 50px;
 
-	h2 {
+	span {
 		font-family: Helvetica-Bold;
 		font-size: 24px;
 		color: #ffffff;

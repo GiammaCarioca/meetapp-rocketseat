@@ -2,23 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import foto from '../../assets/images/meetup.jpg';
 
-import { Container, Wrapper, StyledLink } from './styles';
+import {
+  Container, Wrapper, StyledLink, Info,
+} from './styles';
 
 const Card = ({ meetups }) => (
   <Container>
     {meetups.map(meetup => (
       <Wrapper key={meetup.id}>
-        <StyledLink to="/meetup">
+        <StyledLink to={`/meetup/${meetup.id}`}>
           <img src={foto} alt={meetup.title} />
-          <div className="wrapper-content">
-            <div className="card-text">
+          <Info>
+            <div>
               <h2>{meetup.title}</h2>
               <small>{meetup.members} membros</small>
             </div>
-            <div className="wrapper-icon">
-              <i className="material-icons">keyboard_arrow_right</i>
-            </div>
-          </div>
+            <i className="material-icons">keyboard_arrow_right</i>
+          </Info>
         </StyledLink>
       </Wrapper>
     ))}

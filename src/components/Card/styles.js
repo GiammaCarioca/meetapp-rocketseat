@@ -27,13 +27,13 @@ export const Wrapper = styled.div`
 		border-top-right-radius: 5px;
 		background-color: green;
 	}
+`;
 
-	div.wrapper-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: 20px;
-	}
+export const Info = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
 
 	h2 {
 		font-size: 16px;
@@ -45,7 +45,7 @@ export const Wrapper = styled.div`
 		color: #999999;
 	}
 
-	.wrapper-icon {
+	i {
 		display: flex;
 		justify-content: center;
 		align-items: center;

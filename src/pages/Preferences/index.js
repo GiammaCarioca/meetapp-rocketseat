@@ -38,7 +38,7 @@ export default class Preferences extends Component {
           <img className="logo-red" src={logo} alt="MeetApp" />
         </Logo>
         <Wrapper>
-          <h2 className="welcome-user">Olá, Giamma</h2>
+          <span>Olá, Giamma</span>
           <p>
 						Parece que é seu primeiro acesso por aqui, comece escolhendo algumas preferências para
 						selecionarmos os melhores meetups pra você:

@@ -15,7 +15,7 @@ export default function Routes() {
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/preferences" component={Preferences} />
-      <Route exact path="/meetup" component={Meetup} />
+      <Route exact path="/meetup/:id" component={Meetup} />
       <Route exact path="/newmeetup" component={NewMeetup} />
       <Route exact path="/profile" component={Profile} />
     </Switch>
