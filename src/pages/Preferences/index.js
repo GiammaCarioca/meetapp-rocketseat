@@ -7,23 +7,8 @@ import { Container, Logo, Wrapper } from './styles';
 export default class Preferences extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      preferences: {
-        frontend: false,
-        backend: false,
-        mobile: false,
-        devops: false,
-        gestao: false,
-        marketing: false,
-      },
-    };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {};
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(e) {
-    const { preferences } = this.state;
-    this.setState({ preferences: { ...preferences, [e.target.value]: e.target.checked } });
   }
 
   handleSubmit(e) {

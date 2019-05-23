@@ -20,12 +20,15 @@ export default class SignUp extends Component {
 
   handleInputChange(e) {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
+
+    // enviar dados do formulário para o server.json e redirecionar
+
     this.setState({
       name: '',
       email: '',
