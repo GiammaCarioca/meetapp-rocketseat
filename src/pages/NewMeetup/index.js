@@ -9,9 +9,9 @@ export default class NewMeetup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: undefined,
-      description: undefined,
-      location: undefined,
+      title: '',
+      description: '',
+      location: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,19 +19,22 @@ export default class NewMeetup extends Component {
 
   handleInputChange(e) {
     this.setState({
-      [e.target.title]: e.target.value,
-      [e.target.description]: e.target.value,
-      [e.target.location]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({
-      title: '',
-      description: '',
-      location: '',
-    });
+    try {
+      // addMeetup(meetup);
+      this.setState({
+        title: '',
+        description: '',
+        location: '',
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
@@ -52,8 +55,7 @@ export default class NewMeetup extends Component {
                 onChange={this.handleInputChange}
               />
               <label htmlFor="description">Descrição</label>
-              <input
-                type="text"
+              <textarea
                 id="description"
                 name="description"
                 value={description}

@@ -38,6 +38,20 @@ export const Form = styled.form`
 		}
 	}
 
+	textarea {
+		width: 320px;
+		background: transparent;
+		border-style: none;
+		margin-top: 10px;
+		font-size: 20px;
+		color: #ffffff;
+		opacity: 0.6;
+
+		:focus {
+			outline: 5px auto #e5556e;
+		}
+	}
+
 	.upload-image {
 		display: flex;
 		align-items: center;

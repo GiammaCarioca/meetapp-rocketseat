@@ -19,8 +19,7 @@ export default class Login extends Component {
 
   handleInputChange(e) {
     this.setState({
-      [e.target.email]: e.target.value,
-      [e.target.password]: e.target.value,
+      [e.target.name]: e.target.value
     });
   }
 
