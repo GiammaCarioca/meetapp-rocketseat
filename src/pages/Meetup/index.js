@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
-import foto from '../../assets/images/meetup-2.png';
 
 import { Article, Wrapper } from './styles';
 
@@ -14,7 +13,7 @@ const Meetup = (props) => {
       <Navbar />
       {meetups.filter(meetup => meetup.id === parseInt(id)).map(meetup => (
         <Article key={meetup.id}>
-          <img src={foto} alt={meetup.title} />
+          <img src={meetup.image} alt={meetup.title} />
           <Wrapper>
             <h3>{meetup.title}</h3>
             <small>{meetup.members} membros</small>

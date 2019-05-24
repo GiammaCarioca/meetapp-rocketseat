@@ -3,22 +3,18 @@ import styled from 'styled-components';
 
 export const StyledLink = styled(Link)`text-decoration: none;`;
 
-export const Container = styled.div`
-	display: flex;
-	justify-content: space-between;
-`;
-
 export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 280px;
 	border-radius: 5px;
 	margin-right: 20px;
+	margin-bottom: 20px;
 	background-color: #ffffff;
 
-	&:last-child {
+	/* &:last-child {
 		margin-right: 0;
-	}
+	} */
 
 	img {
 		width: 100%;
