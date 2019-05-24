@@ -1,92 +1,28 @@
-const allMeetups = [
-  {
-    id: 1,
-    title: 'Meetup React Native',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image: 'https://facebook.github.io/react-native/blog/assets/rnmsf-august-2016-hero.jpg',
-    members: 87,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Mobile'],
-    createdAt: '25/06/2019',
-    dueDate: '30/06/2019',
-    userId: [2, 3],
-  },
-  {
-    id: 2,
-    title: 'Meetup ReactJS',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image: 'https://techlifeireland.com/wp-content/uploads/2017/09/ruby-meetup.jpg',
-    members: 52,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Front-end'],
-    createdAt: '5/07/2019',
-    dueDate: '18/07/2019',
-    userId: [1],
-  },
-  {
-    id: 3,
-    title: 'Meetup Rocketseat',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image: 'https://camunda.com/img/events/meetup-example.jpg',
-    members: 23,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Marketing', 'Gestão'],
-    createdAt: '17/10/2019',
-    dueDate: '27/10/2019',
-    userId: [1, 2, 3],
-  },
-  {
-    id: 4,
-    title: 'Meetup Flutter',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image: 'https://pbs.twimg.com/media/DxTAXWAVYAEccgi.jpg',
-    members: 87,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Mobile'],
-    createdAt: '09/09/2019',
-    dueDate: '11/09/2019',
-    userId: [2, 3],
-  },
-  {
-    id: 5,
-    title: 'Meetup JavaScript',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image: 'https://www.tigera.io/wp-content/uploads/2018/08/IMG_20180822_183236-598x381.jpg',
-    members: 87,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Front-end'],
-    createdAt: '10/09/2019',
-    dueDate: '13/09/2019',
-    userId: [3],
-  },
-];
-
-const INITIAL_STATE = [
-  {
-    id: 6,
-    title: 'Meetup Ruby On Rails',
-    description:
-			'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
-    image:
-			'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F52219236%2F137583652834%2F1%2Foriginal.jpg?w=600&auto=compress&rect=0%2C259%2C4080%2C2040&s=e9179b3047f0e9311fac77360c841fca',
-    members: 87,
-    location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
-    themes: ['Front-end'],
-    createdAt: '10/09/2019',
-    dueDate: '13/09/2019',
-    userId: [1, 2, 3, 4],
-  },
-];
+const INITIAL_STATE = [];
 
 export default function users(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'GET_MEETUPS': {
-      return [...state, ...allMeetups];
+    case 'GET_MEETUPS_SUCCESS': {
+      return [...state, ...action.payload.data];
+    }
+    case 'ADD_MEETUP': {
+      return [
+        ...state,
+        // {
+        //   id: 7,
+        //   title: 'Meetup IED',
+        //   description:
+        // 		'O meetup de React Native é um espaço para discutir sobre tecnologias por volta do desenvolvimento web utilizando a biblioteca do Facebook para criação de interfaces móveis multiplataforma com Javascript.',
+        //   image: 'https://www.tigera.io/wp-content/uploads/2018/08/IMG_20180822_183236-598x381.jpg',
+        //   members: 1,
+        //   location: 'Rua Guilherme Gembala, 260, Rio do Sul - SC',
+        //   themes: ['Front-end'],
+        //   createdBy: 'Giamma',
+        //   createdAt: '10/09/2019',
+        //   dueDate: '13/09/2019',
+        //   userId: [7],
+        // },
+      ];
     }
     default:
       return state;

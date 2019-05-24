@@ -10,12 +10,8 @@ import { Main, Section, Container } from './styles';
 
 class Dashboard extends Component {
   componentDidMount() {
-    this.props.getMeetups();
+    this.props.getMeetupsRequest();
   }
-
-  // cardSelectedHandler = (id) => {
-  //   this.setState({ selectedCardId: id });
-  // };
 
   render() {
     const meetups = this.props.meetups.map(meetup => (

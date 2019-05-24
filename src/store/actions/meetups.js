@@ -1,5 +1,7 @@
-export const getMeetups = () => ({ type: 'GET_MEETUPS' });
+export const getMeetupsRequest = () => ({ type: 'GET_MEETUPS_REQUEST' });
 
-export const addMeetup = userId => ({ type: 'ADD_MEETUP', payload: { userId } });
+export const getMeetupsSuccess = data => ({ type: 'GET_MEETUPS_SUCCESS', payload: { data } });
 
-export const subscribeMeetup = meetupId => ({ type: 'SUBSCRIBE_MEETUP', payload: { meetupId } });
+export const addMeetup = () => ({ type: 'ADD_MEETUP' });
+
+export const subscribeMeetup = () => ({ type: 'SUBSCRIBE_MEETUP' });

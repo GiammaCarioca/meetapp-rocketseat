@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as MeetupsActions from '../../store/actions/meetups';
 import Navbar from '../../components/Navbar';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
 
 import { Container, Form } from './styles';
 
-export default class NewMeetup extends Component {
+class NewMeetup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,12 +29,12 @@ export default class NewMeetup extends Component {
   handleSubmit(e) {
     e.preventDefault();
     try {
-      // addMeetup(meetup);
-      this.setState({
-        title: '',
-        description: '',
-        location: '',
-      });
+      // this.props.addMeetup();
+      // this.setState({
+      //   title: '',
+      //   description: '',
+      //   location: '',
+      // });
     } catch (error) {
       console.log(error);
     }
@@ -84,3 +87,11 @@ export default class NewMeetup extends Component {
     );
   }
 }
+
+const mapStatetoProps = state => ({
+  meetups: state.meetups,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(MeetupsActions, dispatch);
+
+export default connect(mapStatetoProps, mapDispatchToProps)(NewMeetup);

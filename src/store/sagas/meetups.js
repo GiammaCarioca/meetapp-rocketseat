@@ -1,25 +1,22 @@
-// import api from '../../services/api';
+import { call, put } from 'redux-saga/effects';
+import api from '../../services/api';
 
-// api.get('/meetups').then((response) => {
-//   const meetups = response.data.slice(0, 6);
-//   const updatedMembers = meetups.map(meetup => ({
-//     ...meetup,
-//     members: meetup.userId.length,
-//   }));
-//   console.log(updatedMembers);
-//   return updatedMembers;
-// });
+import { getMeetupsSuccess } from '../actions/meetups';
 
-// import { call, put } from 'redux-saga/effects';
-// import { Creators as MeetupsActions } from 'ducks/meetups';
-// import api from '../../services/api';
+export function* getMeetups() {
+  try {
+    // recebe response.data, mas com desestruturação ficamos com {data}
+    const { data } = yield call(api.get, '/meetups');
 
-// export function* getMeetups() {
-//   try {
-//     const response = yield call(api.get, '/meetups');
+    // manipulando data
+    const someMeetups = data.slice(0, 6);
+    const meetups = someMeetups.map(meetup => ({
+      ...meetup,
+      members: meetup.userId.length,
+    }));
 
-//     yield put(MeetupsActions.getMeetupsSuccess(response.data));
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+    yield put(getMeetupsSuccess(meetups));
+  } catch (err) {
+    console.log(err);
+  }
+}
