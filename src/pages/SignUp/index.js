@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as UsersActions from '../../store/actions/users';
 import logo from '../../assets/images/logo-red.svg';
 import Button from '../../components/Button';
 
@@ -6,7 +9,7 @@ import {
   Container, Logo, Form, StyledLink,
 } from './styles';
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,13 +30,23 @@ export default class SignUp extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // enviar dados do formulário para o server.json e redirecionar
+    try {
+      const user = {
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+      };
 
-    this.setState({
-      name: '',
-      email: '',
-      password: '',
-    });
+      this.props.addUserRequest(user);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      this.setState({
+        name: '',
+        email: '',
+        password: '',
+      });
+    }
   }
 
   render() {
@@ -79,3 +92,7 @@ export default class SignUp extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => bindActionCreators(UsersActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(SignUp);

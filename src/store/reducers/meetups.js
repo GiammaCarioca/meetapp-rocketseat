@@ -1,6 +1,6 @@
 const INITIAL_STATE = [];
 
-export default function users(state = INITIAL_STATE, action) {
+export default function meetups(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'GET_MEETUPS_SUCCESS': {
       return [...state, ...action.payload.data];
