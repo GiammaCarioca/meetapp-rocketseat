@@ -7,7 +7,7 @@ import { Container, Logo, Wrapper } from './styles';
 export default class Preferences extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {response: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -16,6 +16,20 @@ export default class Preferences extends Component {
     console.log(this);
   }
 
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({ response: res.name }))
+      .catch(err => console.log(err));
+  }
+
+  callApi = async () => {
+    const response = await fetch('/preferences');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
+  };
+
   render() {
     return (
       <Container>
@@ -23,7 +37,7 @@ export default class Preferences extends Component {
           <img className="logo-red" src={logo} alt="MeetApp" />
         </Logo>
         <Wrapper>
-          <span>Olá, Giamma</span>
+          <span>Olá, {this.state.response}</span>
           <p>
 						Parece que é seu primeiro acesso por aqui, comece escolhendo algumas preferências para
 						selecionarmos os melhores meetups pra você:
