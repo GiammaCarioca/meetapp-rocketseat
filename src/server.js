@@ -1,10 +1,21 @@
 const express = require('express')
 
-const app = express()
-const port = process.env.PORT || 5000
+class App {
+  constructor () {
+    this.express = express()
+    this.isDev = process.env.NODE_ENV !== 'production'
 
-app.get('/preferences', (req, res) => {
-  res.send({ name: 'Giamma' })
-})
+    this.middlewares()
+    this.routes()
+  }
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+  middlewares () {
+    this.express.use(express.urlencoded({ extended: false }))
+  }
+
+  routes () {
+    this.express.use(require('./routes'))
+  }
+}
+
+module.exports = new App().express
