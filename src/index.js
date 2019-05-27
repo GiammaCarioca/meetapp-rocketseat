@@ -1,5 +1,5 @@
-const server = require('./server')
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-const port = process.env.PORT || 5000
-
-server.listen(port, () => console.log(`Listening on port ${port}`))
+ReactDOM.render(<App />, document.getElementById('root'));
