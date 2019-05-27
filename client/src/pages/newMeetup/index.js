@@ -37,6 +37,8 @@ class NewMeetup extends Component {
       // });
     } catch (error) {
       console.log(error);
+    } finally {
+      this.props.history.push("/");
     }
   }
 

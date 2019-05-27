@@ -7,10 +7,10 @@ import Button from '../../components/Button';
 import { Container, Form } from './styles';
 
 class Profile extends Component {
-	state = {
-	  name: 'Thiago Giammattey',
-	  password: 'Sua senha secreta',
-	};
+    state = {
+      name: 'Thiago Giammattey',
+      password: 'Sua senha secreta',
+    };
 
 	render() {
 	  const { name, password } = this.state;

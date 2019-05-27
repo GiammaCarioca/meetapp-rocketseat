@@ -46,6 +46,7 @@ class SignUp extends Component {
         email: '',
         password: '',
       });
+      this.props.history.push("/login");
     }
   }
 

@@ -29,6 +29,7 @@ export default class Login extends Component {
       email: '',
       password: '',
     });
+    this.props.history.push("/preferences");
   }
 
   render() {
