@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
 
-import { Container, Form } from './styles';
+import { Container, Form, File } from './styles';
 
 class NewMeetup extends Component {
   constructor(props) {
@@ -67,10 +67,14 @@ class NewMeetup extends Component {
                 placeholder="Descreva seu meetup"
                 onChange={this.handleInputChange}
               />
-              <label htmlFor="image">Imagem</label>
-              <div className="upload-image">
-                <input type="file" id="image" name="image" />
-              </div>
+              <span>Imagem</span>
+              <File>
+                <label htmlFor="image-upload">
+                  <i className="material-icons">camera_alt</i>
+                </label>
+                <input type="file" id="image-upload" name="image-upload" />
+              </File>
+
               <label htmlFor="location">Localização</label>
               <input
                 type="text"

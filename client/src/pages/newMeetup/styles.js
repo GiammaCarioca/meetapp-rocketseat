@@ -18,14 +18,14 @@ export const Form = styled.form`
 	width: 100%;
 	max-width: 320px;
 
-	label {
+	label,
+	span {
 		margin-top: 40px;
 		font-weight: bold;
 		color: #ffffff;
 	}
 
-	input[type='text'],
-	input[type='file'] {
+	input[type='text'] {
 		width: 320px;
 		background: transparent;
 		border-style: none;
@@ -52,18 +52,36 @@ export const Form = styled.form`
 			outline: 5px auto #e5556e;
 		}
 	}
+`;
 
-	.upload-image {
+export const File = styled.div`
+	margin-top: 10px;
+	border: dashed 1px rgba(255, 255, 255, 0.8);
+
+	label {
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		margin-top: 10px;
 		width: 315px;
 		height: 85px;
-		border: dashed 1px rgba(255, 255, 255, 0.8);
+		margin-top: 0;
+		cursor: pointer;
+	}
+
+	[type='file'] {
+		border: 0;
+		clip: rect(0, 0, 0, 0);
+		height: 1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		white-space: nowrap;
+		width: 1px;
 	}
 
 	i {
 		color: #ffffff;
 		opacity: 0.6;
+		cursor: pointer;
 	}
 `;
