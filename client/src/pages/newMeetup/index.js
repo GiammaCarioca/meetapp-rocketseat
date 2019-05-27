@@ -38,7 +38,7 @@ class NewMeetup extends Component {
     } catch (error) {
       console.log(error);
     } finally {
-      this.props.history.push("/");
+      this.props.history.push('/');
     }
   }
 
@@ -69,7 +69,7 @@ class NewMeetup extends Component {
               />
               <label htmlFor="image">Imagem</label>
               <div className="upload-image">
-                <input type="text" id="image" name="image" placeholder="Carregue uma imagem" />
+                <input type="file" id="image" name="image" />
               </div>
               <label htmlFor="location">Localização</label>
               <input

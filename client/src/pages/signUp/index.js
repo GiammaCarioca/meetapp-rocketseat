@@ -57,7 +57,7 @@ class SignUp extends Component {
         <Logo>
           <img className="logo-red" src={logo} alt="MeetApp" />
         </Logo>
-        <Form onSubmit={this.handleSubmit}>
+        <Form action="/signup" method="post" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Nome</label>
           <input
             type="text"
