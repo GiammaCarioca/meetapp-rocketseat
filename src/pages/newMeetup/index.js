@@ -38,7 +38,7 @@ class NewMeetup extends Component {
     } catch (error) {
       console.log(error);
     } finally {
-      this.props.history.push('/');
+      this.props.history.push('/dashboard');
     }
   }
 
@@ -49,7 +49,7 @@ class NewMeetup extends Component {
         <Navbar />
         <Container>
           <div>
-            <Form onSubmit={this.handleSubmit}>
+            <Form action="/meetups" method="post" enctype="multipart/form-data" onSubmit={this.handleSubmit}>
               <label htmlFor="title">Título</label>
               <input
                 type="text"

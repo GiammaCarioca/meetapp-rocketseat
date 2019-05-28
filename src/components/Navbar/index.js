@@ -10,8 +10,8 @@ const Navbar = () => (
       <h1>
         <img src={logo} alt="MeetApp" />
       </h1>
-      <NavLink to="/">Início</NavLink>
-      <NavLink to="/">Buscar</NavLink>
+      <NavLink to="/dashboard">Início</NavLink>
+      <NavLink to="/dashboard">Buscar</NavLink>
       <NavLink to="/newmeetup">Novo meetup</NavLink>
     </div>
     <div className="profile">

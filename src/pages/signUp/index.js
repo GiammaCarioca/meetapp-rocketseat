@@ -46,7 +46,7 @@ class SignUp extends Component {
         email: '',
         password: '',
       });
-      this.props.history.push("/login");
+      this.props.history.push("/");
     }
   }
 
@@ -87,7 +87,7 @@ class SignUp extends Component {
             placeholder="Sua senha secreta"
           />
           <Button type="submit">Criar conta</Button>
-          <StyledLink to="/login">Já tenho conta</StyledLink>
+          <StyledLink to="/">Já tenho conta</StyledLink>
         </Form>
       </Container>
     );

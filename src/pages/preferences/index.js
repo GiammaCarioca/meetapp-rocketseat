@@ -14,7 +14,7 @@ export default class Preferences extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this);
-    this.props.history.push("/");
+    this.props.history.push("/dashboard");
   }
 
   componentDidMount() {

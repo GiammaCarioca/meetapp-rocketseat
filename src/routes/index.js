@@ -11,9 +11,9 @@ import Profile from '../pages/profile';
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Dashboard} />
+      <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/signup" component={SignUp} />
-      <Route exact path="/login" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route exact path="/preferences" component={Preferences} />
       <Route exact path="/meetup/:id" component={Meetup} />
       <Route exact path="/newmeetup" component={NewMeetup} />
