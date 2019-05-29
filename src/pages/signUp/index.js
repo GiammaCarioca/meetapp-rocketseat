@@ -31,10 +31,11 @@ class SignUp extends Component {
     e.preventDefault();
 
     try {
+      const { name, email, password } = this.state;
       const user = {
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password,
+        name,
+        email,
+        password,
       };
 
       this.props.addUserRequest(user);
@@ -46,7 +47,7 @@ class SignUp extends Component {
         email: '',
         password: '',
       });
-      this.props.history.push("/");
+      this.props.history.push('/');
     }
   }
 

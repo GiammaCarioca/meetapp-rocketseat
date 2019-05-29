@@ -11,14 +11,6 @@ export function* addUsers(action) {
       name: action.payload.user.name,
       email: action.payload.user.email,
       password: action.payload.user.password,
-      // preferences: {
-      //   frontend: false,
-      //   backend: false,
-      //   Mobile: false,
-      //   Devops: false,
-      //   Gestao: false,
-      //   Marketing: false,
-      // },
     };
 
     const { data } = yield call(api.post, '/signup', user);

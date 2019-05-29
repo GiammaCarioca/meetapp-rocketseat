@@ -10,8 +10,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: undefined,
-      password: undefined,
+      email: '',
+      password: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,11 +25,7 @@ export default class Login extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({
-      email: '',
-      password: '',
-    });
-    this.props.history.push("/preferences");
+    this.props.history.push('/preferences');
   }
 
   render() {
