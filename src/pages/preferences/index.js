@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import api from '../../services/api';
+import api from '../../services/api';
 import * as PreferencesActions from '../../store/actions/preferences';
 import logo from '../../assets/images/logo-red.svg';
 import Button from '../../components/Button';
@@ -28,36 +28,42 @@ class Preferences extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange(e) {
-    this.setState({
-      [e.target.name]: e.target.checked,
-    });
+  async componentDidMount() {
+    const { data } = await api.get('/preferences');
+	  const { userName } = data;
+    await this.setState({ loggedUser: userName });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+	handleInputChange(e) {
+	  this.setState({
+	    [e.target.name]: e.target.checked,
+	  });
+	}
 
-    try {
-      const {
-        frontend, backend, mobile, devops, gestao, marketing,
-      } = this.state.preferences;
+	handleSubmit(e) {
+	  e.preventDefault();
 
-      const preferences = {
-        frontend,
-        backend,
-        mobile,
-        devops,
-        gestao,
-        marketing,
-      };
+	  try {
+	    const {
+	      frontend, backend, mobile, devops, gestao, marketing,
+	    } = this.state.preferences;
 
-      this.props.addPreferencesRequest(preferences);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      this.props.history.push('/dashboard');
-    }
-  }
+	    const preferences = {
+	      frontend,
+	      backend,
+	      mobile,
+	      devops,
+	      gestao,
+	      marketing,
+	    };
+
+	    this.props.addPreferencesRequest(preferences);
+	  } catch (err) {
+	    console.log(err);
+	  } finally {
+	    this.props.history.push('/dashboard');
+	  }
+	}
 
 	render() {
 	  const {
