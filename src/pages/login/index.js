@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as UsersActions from '../../store/actions/users';
 import logo from '../../assets/images/logo-red.svg';
 import Button from '../../components/Button';
 
@@ -6,7 +9,7 @@ import {
   Container, Logo, Form, StyledLink,
 } from './styles';
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +28,24 @@ export default class Login extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push('/preferences');
+
+    try {
+      const { email, password } = this.state;
+      const user = {
+        email,
+        password,
+      };
+
+      this.props.addLoginRequest(user);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      this.setState({
+        email: '',
+        password: '',
+      });
+      this.props.history.push('/preferences');
+    }
   }
 
   render() {
@@ -35,7 +55,7 @@ export default class Login extends Component {
         <Logo>
           <img className="logo-red" src={logo} alt="MeetApp" />
         </Logo>
-        <Form onSubmit={this.handleSubmit}>
+        <Form action="/" method="post" onSubmit={this.handleSubmit}>
           <label htmlFor="email">E-mail</label>
           <input
             type="email"
@@ -62,3 +82,7 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => bindActionCreators(UsersActions, dispatch);
+
+export default connect(null, mapDispatchToProps)(Login);
