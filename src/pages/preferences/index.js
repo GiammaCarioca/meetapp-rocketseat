@@ -14,14 +14,12 @@ class Preferences extends Component {
     super(props);
     this.state = {
       loggedUser: '',
-      preferences: {
-        frontend: false,
-        backend: false,
-        mobile: false,
-        devops: false,
-        gestao: false,
-        marketing: false,
-      },
+      frontend: false,
+      backend: false,
+      mobile: false,
+      devops: false,
+      gestao: false,
+      marketing: false
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -46,7 +44,7 @@ class Preferences extends Component {
 	  try {
 	    const {
 	      frontend, backend, mobile, devops, gestao, marketing,
-	    } = this.state.preferences;
+	    } = this.state;
 
 	    const preferences = {
 	      frontend,
@@ -152,6 +150,10 @@ class Preferences extends Component {
 	}
 }
 
+const mapStatetoProps = state => ({
+  users: state.users,
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators(PreferencesActions, dispatch);
 
-export default connect(null, mapDispatchToProps)(Preferences);
+export default connect(mapStatetoProps, mapDispatchToProps)(Preferences);
