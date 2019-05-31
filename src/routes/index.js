@@ -7,17 +7,18 @@ import Preferences from '../pages/preferences';
 import Meetup from '../pages/meetup';
 import NewMeetup from '../pages/newMeetup';
 import Profile from '../pages/profile';
+import PrivateRoute from './PrivateRoute';
 
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/dashboard" component={Dashboard} />
+      <PrivateRoute exact path="/dashboard" component={Dashboard} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/" component={Login} />
-      <Route exact path="/preferences" component={Preferences} />
+      <PrivateRoute exact path="/preferences" component={Preferences} />
       <Route exact path="/meetup/:id" component={Meetup} />
-      <Route exact path="/newmeetup" component={NewMeetup} />
-      <Route exact path="/profile" component={Profile} />
+      <PrivateRoute exact path="/newmeetup" component={NewMeetup} />
+      <PrivateRoute exact path="/profile" component={Profile} />
     </Switch>
   );
 }
