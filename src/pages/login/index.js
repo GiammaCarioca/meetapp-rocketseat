@@ -29,22 +29,24 @@ class Login extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      const { email, password } = this.state;
-      const user = {
-        email,
-        password,
-      };
+    const { email, password } = this.state;
+    const user = {
+      email,
+      password,
+    };
 
+    // try {
+    //   this.props.addLoginRequest(user);
+    // } catch (err) {
+    //   console.log(err);
+    // } finally {
+    //   this.props.history.push('/preferences');
+    // }
+
+    try {
       this.props.addLoginRequest(user);
     } catch (err) {
       console.log(err);
-    } finally {
-      this.setState({
-        email: '',
-        password: '',
-      });
-      this.props.history.push('/preferences');
     }
   }
 
@@ -83,6 +85,10 @@ class Login extends Component {
   }
 }
 
+const mapStatetoProps = state => ({
+  users: state.users,
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators(UsersActions, dispatch);
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStatetoProps, mapDispatchToProps)(Login);

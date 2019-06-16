@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import api from '../../services/api';
-import { login } from '../../services/auth';
+import { signup, login } from '../../services/auth';
 
 import { addUserSuccess, addLoginSuccess } from '../actions/users';
 
@@ -16,9 +16,7 @@ export function* addUsers(action) {
 
     yield put(addUserSuccess(data));
 
-    // salva o token que recebeu da api no local storage
-    login(data.token);
-    console.log(data.token);
+    signup(data.token);
   } catch (err) {
     console.log(err);
   }
@@ -35,9 +33,7 @@ export function* loginUser(action) {
 
     yield put(addLoginSuccess(data));
 
-    // salva o token que recebeu da api no local storage
     login(data.token);
-    console.log(data.token);
   } catch (err) {
     console.log(err);
   }

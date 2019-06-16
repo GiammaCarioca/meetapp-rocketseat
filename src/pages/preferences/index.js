@@ -19,7 +19,7 @@ class Preferences extends Component {
       mobile: false,
       devops: false,
       gestao: false,
-      marketing: false
+      marketing: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -27,9 +27,13 @@ class Preferences extends Component {
   }
 
   async componentDidMount() {
-    const { data } = await api.get('/preferences');
-	  const { userName } = data;
-    await this.setState({ loggedUser: userName });
+    try {
+      const { data } = await api.get('/preferences');
+      const { userName } = data;
+      this.setState({ loggedUser: userName });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 	handleInputChange(e) {
@@ -66,89 +70,89 @@ class Preferences extends Component {
 	render() {
 	  const {
 	    frontend, backend, mobile, devops, gestao, marketing,
-	  } = this.state;
-	  return (
-  <Container>
-    <Logo>
-      <img className="logo-red" src={logo} alt="MeetApp" />
-    </Logo>
-    <Wrapper>
-      <span>Olá, {this.state.loggedUser}</span>
-      <p>
-						Parece que é seu primeiro acesso por aqui, comece escolhendo algumas preferências para
-						selecionarmos os melhores meetups pra você:
-      </p>
-      <form action="/preferences" method="post" onSubmit={this.handleSubmit}>
-        <Fieldset>
-          <legend>Preferências</legend>
-          <div className="checkbox-wrapper">
-            <input
-              checked={frontend}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="frontend"
-              name="frontend"
-            />
-            <label htmlFor="frontend">Front-end</label>
-          </div>
-          <div className="checkbox-wrapper">
-            <input
-              checked={backend}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="backend"
-              name="backend"
-            />
-            <label htmlFor="backend">Back-end</label>
-          </div>
-          <div className="checkbox-wrapper">
-            <input
-              checked={mobile}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="mobile"
-              name="mobile"
-            />
-            <label htmlFor="mobile">Mobile</label>
-          </div>
-          <div className="checkbox-wrapper">
-            <input
-              checked={devops}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="devops"
-              name="devops"
-            />
-            <label htmlFor="devops">DevOps</label>
-          </div>
-          <div className="checkbox-wrapper">
-            <input
-              checked={gestao}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="gestao"
-              name="gestao"
-            />
-            <label htmlFor="gestao">Gestão</label>
-          </div>
-          <div className="checkbox-wrapper">
-            <input
-              checked={marketing}
-              onChange={this.handleInputChange}
-              type="checkbox"
-              id="marketing"
-              name="marketing"
-            />
-            <label htmlFor="marketing">Marketing</label>
-          </div>
-        </Fieldset>
-        <Button type="submit">Continuar</Button>
-      </form>
-    </Wrapper>
-  </Container>
-	  );
+    } = this.state;
+      return (
+      <Container>
+       <Logo>
+         <img className="logo-red" src={logo} alt="MeetApp" />
+       </Logo>
+       <Wrapper>
+         <span>Olá, {this.state.loggedUser}</span>
+         <p>
+               Parece que é seu primeiro acesso por aqui, comece escolhendo algumas preferências para
+               selecionarmos os melhores meetups pra você:
+         </p>
+         <form action="/preferences" method="post" onSubmit={this.handleSubmit}>
+           <Fieldset>
+             <legend>Preferências</legend>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={frontend}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="frontend"
+                 name="frontend"
+               />
+               <label htmlFor="frontend">Front-end</label>
+             </div>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={backend}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="backend"
+                 name="backend"
+               />
+               <label htmlFor="backend">Back-end</label>
+             </div>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={mobile}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="mobile"
+                 name="mobile"
+               />
+               <label htmlFor="mobile">Mobile</label>
+             </div>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={devops}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="devops"
+                 name="devops"
+               />
+               <label htmlFor="devops">DevOps</label>
+             </div>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={gestao}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="gestao"
+                 name="gestao"
+               />
+               <label htmlFor="gestao">Gestão</label>
+             </div>
+             <div className="checkbox-wrapper">
+               <input
+                 checked={marketing}
+                 onChange={this.handleInputChange}
+                 type="checkbox"
+                 id="marketing"
+                 name="marketing"
+               />
+               <label htmlFor="marketing">Marketing</label>
+             </div>
+           </Fieldset>
+           <Button type="submit">Continuar</Button>
+        </form>
+       </Wrapper>
+      </Container>
+      );
+    }
 	}
-}
 
 const mapStatetoProps = state => ({
   users: state.users,

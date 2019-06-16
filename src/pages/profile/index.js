@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { logout } from '../../services/auth';
 import Navbar from '../../components/Navbar';
 import Fieldset from '../../components/Fieldset';
 import Button from '../../components/Button';
@@ -7,10 +8,10 @@ import Button from '../../components/Button';
 import { Container, Form } from './styles';
 
 class Profile extends Component {
-    state = {
-      name: 'Thiago Giammattey',
-      password: 'Sua senha secreta',
-    };
+	state = {
+	  name: 'Thiago Giammattey',
+	  password: 'Sua senha secreta',
+	};
 
 	render() {
 	  const { name, password } = this.state;
@@ -39,6 +40,7 @@ class Profile extends Component {
         />
         <Fieldset legend="Preferências" />
         <Button>Salvar</Button>
+        <Button onClick={() => logout()}>Logout</Button>
       </Form>
     </Container>
   </Fragment>

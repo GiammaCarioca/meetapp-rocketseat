@@ -42,11 +42,6 @@ class SignUp extends Component {
     } catch (err) {
       console.log(err);
     } finally {
-      this.setState({
-        name: '',
-        email: '',
-        password: '',
-      });
       this.props.history.push('/preferences');
     }
   }
